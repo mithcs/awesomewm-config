@@ -6,7 +6,7 @@ Altkey = "Mod1"
 -- Variables to be used later
 -- These are the base
 Shell = "bash -c"
-ScriptsDir = " $HOME/zzz/"
+ScriptsDir = " $HOME/scripts/"
 
 -- Programs
 Terminal = "st"
