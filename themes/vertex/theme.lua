@@ -27,9 +27,9 @@ theme.bg_focus2                                 = "#3762B8"
 theme.bg_normal                                 = "#242424"
 theme.fg_urgent                                 = "#CC9393"
 theme.bg_urgent                                 = "#006B8E"
-theme.border_width                              = dpi(4)
+theme.border_width                              = dpi(2)
 theme.border_normal                             = "#252525"
-theme.border_focus                              = "#7CA2EE"
+theme.border_focus                              = "#FD1F61"
 theme.tooltip_border_color                      = theme.fg_focus
 theme.tooltip_border_width                      = theme.border_width
 theme.menu_height                               = dpi(24)
@@ -148,7 +148,7 @@ theme.volume = lain.widget.alsabar {
 theme.volume.tooltip.wibox.fg = theme.fg_focus
 theme.volume.bar:buttons(my_table.join (
           awful.button({}, 1, function()
-            awful.spawn(string.format("%s -e alsamixer", awful.util.terminal))
+            awful.spawn(string.format("%s -e alsamixer", awful.util.Terminal))
           end),
           awful.button({}, 2, function()
             os.execute(string.format("%s set %s 100%%", theme.volume.cmd, theme.volume.channel))
@@ -184,7 +184,7 @@ wifitooltip:set_shape(function(cr, width, height)
     gears.shape.infobubble(cr, width, height, corner_radius, arrow_size, width - dpi(120))
 end)
 local mywifisig = awful.widget.watch(
-    { awful.util.shell, "-c", "awk 'NR==3 {printf(\"%d-%.0f\\n\",$2, $3*10/7)}' /proc/net/wireless; iw dev wlp0s29u1u7 link" }, -- NOTE: Update interface name when required
+    { awful.util.shell, "-c", "awk 'NR==3 {printf(\"%d-%.0f\\n\",$2, $3*10/7)}' /proc/net/wireless; iw dev wlan0 link" }, -- NOTE: Update interface name when required
     2,
     function(widget, stdout)
         local carrier, perc = stdout:match("(%d)-(%d+)")
@@ -210,7 +210,7 @@ local mywifisig = awful.widget.watch(
         end
     end
 )
-wificon:connect_signal("button::press", function() awful.spawn(string.format("%s -e nmtui", awful.util.terminal)) end)
+wificon:connect_signal("button::press", function() awful.spawn(string.format("%s -e impala", awful.util.Terminal)) end)
 
 -- Weather
 --[[ to be set before use
@@ -330,7 +330,7 @@ end
 
 function theme.at_screen_connect(s)
     -- Quake application
-    s.quake = lain.util.quake({ app = awful.util.terminal, border = theme.border_width })
+    s.quake = lain.util.quake({ app = awful.util.Terminal, border = theme.border_width })
 
     -- If wallpaper is a function, call it with the screen
     local wallpaper = theme.wallpaper

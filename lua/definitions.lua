@@ -10,8 +10,8 @@ ScriptsDir = " $HOME/scripts/"
 
 -- Programs
 Terminal = "st"
-Browser = "thorium-browser"
-Browser2 = "zen-browser"
+Browser = "firefox"
+Browser2 = ""
 File_Explorer = "thunar"
 Megasync = "Megasync"
 Editor = "nvim"
