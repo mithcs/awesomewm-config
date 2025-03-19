@@ -1,12 +1,12 @@
 -- Signal function to execute when a new client appears.
-client.connect_signal("manage", function (c)
+client.connect_signal("manage", function(c)
     -- Set the windows at the slave,
     -- i.e. put it at the end of others instead of setting it master.
     -- if not awesome.startup then awful.client.setslave(c) end
 
     if awesome.startup
-      and not c.size_hints.user_position
-      and not c.size_hints.program_position then
+        and not c.size_hints.user_position
+        and not c.size_hints.program_position then
         -- Prevent clients from being unreachable after screen count changes.
         Awful.placement.no_offscreen(c)
     end
@@ -23,23 +23,23 @@ client.connect_signal("request::titlebars", function(c)
     -- Default
     -- buttons for the titlebar
     local buttons = MyTable.join(
-        Awful.button({ }, 1, function()
-            c:emit_signal("request::activate", "titlebar", {raise = true})
+        Awful.button({}, 1, function()
+            c:emit_signal("request::activate", "titlebar", { raise = true })
             Awful.mouse.client.move(c)
         end),
-        Awful.button({ }, 3, function()
-            c:emit_signal("request::activate", "titlebar", {raise = true})
+        Awful.button({}, 3, function()
+            c:emit_signal("request::activate", "titlebar", { raise = true })
             Awful.mouse.client.resize(c)
         end)
     )
 
-    Awful.titlebar(c, { size = 16 }) : setup {
+    Awful.titlebar(c, { size = 16 }):setup {
         { -- Left
             Awful.titlebar.widget.iconwidget(c),
             buttons = buttons,
             layout  = Wibox.layout.fixed.horizontal
         },
-        { -- Middle
+        {     -- Middle
             { -- Title
                 align  = "center",
                 widget = Awful.titlebar.widget.titlewidget(c)
@@ -48,11 +48,11 @@ client.connect_signal("request::titlebars", function(c)
             layout  = Wibox.layout.flex.horizontal
         },
         { -- Right
-            Awful.titlebar.widget.floatingbutton (c),
+            Awful.titlebar.widget.floatingbutton(c),
             Awful.titlebar.widget.maximizedbutton(c),
-            Awful.titlebar.widget.stickybutton   (c),
-            Awful.titlebar.widget.ontopbutton    (c),
-            Awful.titlebar.widget.closebutton    (c),
+            Awful.titlebar.widget.stickybutton(c),
+            Awful.titlebar.widget.ontopbutton(c),
+            Awful.titlebar.widget.closebutton(c),
             layout = Wibox.layout.fixed.horizontal()
         },
         layout = Wibox.layout.align.horizontal

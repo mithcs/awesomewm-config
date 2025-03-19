@@ -39,9 +39,9 @@ _Btop = " btop"
 EditorCmd = Terminal .. " -e " .. Editor
 
 
-Awful.util.Terminal = Terminal
-Awful.util.tagnames = { "1", "2", "3", "4", "5" }
-Awful.layout.layouts = {
+Awful.util.Terminal                    = Terminal
+Awful.util.tagnames                    = { "1", "2", "3", "4", "5" }
+Awful.layout.layouts                   = {
     Awful.layout.suit.tile,
     Awful.layout.suit.floating,
     Awful.layout.suit.corner.nw,
@@ -70,32 +70,32 @@ Lain.layout.cascade.tile.extra_padding = 5
 Lain.layout.cascade.tile.nmaster       = 5
 Lain.layout.cascade.tile.ncol          = 2
 
-Awful.util.taglist_buttons = MyTable.join(
-    Awful.button({ }, 1, function(t) t:view_only() end),
+Awful.util.taglist_buttons             = MyTable.join(
+    Awful.button({}, 1, function(t) t:view_only() end),
     Awful.button({ Modkey }, 1, function(t)
         if client.focus then client.focus:move_to_tag(t) end
     end),
-    Awful.button({ }, 3, Awful.tag.viewtoggle),
+    Awful.button({}, 3, Awful.tag.viewtoggle),
     Awful.button({ Modkey }, 3, function(t)
         if client.focus then client.focus:toggle_tag(t) end
     end),
-    Awful.button({ }, 4, function(t) Awful.tag.viewnext(t.screen) end),
-    Awful.button({ }, 5, function(t) Awful.tag.viewprev(t.screen) end)
+    Awful.button({}, 4, function(t) Awful.tag.viewnext(t.screen) end),
+    Awful.button({}, 5, function(t) Awful.tag.viewprev(t.screen) end)
 )
 
-Awful.util.tasklist_buttons = MyTable.join(
-     Awful.button({ }, 1, function(c)
-         if c == client.focus then
-             c.minimized = true
-         else
-             c:emit_signal("request::activate", "tasklist", { raise = true })
-         end
-     end),
-     Awful.button({ }, 3, function()
-         Awful.menu.client_list({ theme = { width = 250 } })
-     end),
-     Awful.button({ }, 4, function() Awful.client.focus.byidx(1) end),
-     Awful.button({ }, 5, function() Awful.client.focus.byidx(-1) end)
+Awful.util.tasklist_buttons            = MyTable.join(
+    Awful.button({}, 1, function(c)
+        if c == client.focus then
+            c.minimized = true
+        else
+            c:emit_signal("request::activate", "tasklist", { raise = true })
+        end
+    end),
+    Awful.button({}, 3, function()
+        Awful.menu.client_list({ theme = { width = 250 } })
+    end),
+    Awful.button({}, 4, function() Awful.client.focus.byidx(1) end),
+    Awful.button({}, 5, function() Awful.client.focus.byidx(-1) end)
 )
 
 Beautiful.init(string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), Theme))

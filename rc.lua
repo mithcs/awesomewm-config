@@ -13,4 +13,3 @@ require('lua.screen')
 require('lua.bindings')
 require('lua.rules')
 require('lua.signals')
-

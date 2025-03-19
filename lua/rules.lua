@@ -2,7 +2,7 @@
 Awful.rules.rules = {
     -- All clients will match this rule.
     {
-        rule = { },
+        rule = {},
         properties = {
             border_width = Beautiful.border_width,
             border_color = Beautiful.border_normal,
@@ -12,7 +12,7 @@ Awful.rules.rules = {
             keys = clientkeys,
             buttons = clientbuttons,
             screen = Awful.screen.preferred,
-            placement = Awful.placement.no_overlap+Awful.placement.no_offscreen,
+            placement = Awful.placement.no_overlap + Awful.placement.no_offscreen,
             size_hints_honor = false
         }
     },
