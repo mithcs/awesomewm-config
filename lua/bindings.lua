@@ -25,10 +25,10 @@ globalkeys = MyTable.join(
         { description = "open megasync", group = "launcher" }),
 
     -- Utils bindings
-    Awful.key({ Modkey }, "i", function() Awful.spawn(AddClipmark) end,
-        { description = "add selected text to clipmark", group = "utils" }),
-    Awful.key({ Modkey, SModkey }, "i", function() Awful.spawn(ShowClipmark) end,
+    Awful.key({ Modkey }, "i", function() Awful.spawn(ShowClipmark) end,
         { description = "show clipmark", group = "utils" }),
+    Awful.key({ Modkey, SModkey }, "i", function() Awful.spawn(AddClipmark) end,
+        { description = "add selected text to clipmark", group = "utils" }),
     Awful.key({ Modkey }, "bracketright", function() Awful.spawn(Cheatsheet) end,
         { description = "open cheatsheet", group = "utils" }),
     Awful.key({ Modkey }, "semicolon", function() Awful.spawn(EmojiPicker) end,
