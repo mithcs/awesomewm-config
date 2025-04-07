@@ -10,7 +10,7 @@ ScriptsDir = " $HOME/scripts/"
 
 -- Programs
 Terminal = "st"
-Browser = "firefox"
+Browser = "librewolf"
 Browser2 = ""
 File_Explorer = "thunar"
 Megasync = "Megasync"
