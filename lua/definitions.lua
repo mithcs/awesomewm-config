@@ -10,8 +10,8 @@ ScriptsDir = " $HOME/scripts/"
 
 -- Programs
 Terminal = "st"
-Browser = "librewolf"
-Browser2 = ""
+Browser = "google-chrome-stable"
+Browser2 = "librewolf"
 File_Explorer = "thunar"
 Megasync = "Megasync"
 Editor = "nvim"
